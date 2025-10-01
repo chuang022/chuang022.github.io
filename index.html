@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的個人簡歷</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 1.5rem;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            animation: fadeInScale 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .hero .title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.8s backwards;
+        }
+
+        .social-links a {
+            background: rgba(255,255,255,0.2);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-3px);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 2rem;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .experience-item:last-child, .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .experience-item h3, .education-item h3 {
+            color: #2d3748;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-meta {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item ul {
+            margin-left: 1.5rem;
+            color: #555;
+        }
+
+        .experience-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f5f7fa;
+            border-radius: 10px;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 2rem 1.5rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">我的簡歷</div>
+            <ul>
+                <li><a href="#about">關於我</a></li>
+                <li><a href="#skills">技能</a></li>
+                <li><a href="#experience">經歷</a></li>
+                <li><a href="#education">學歷</a></li>
+                <li><a href="#contact">聯絡</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="profile-img">👤</div>
+        <h1>莊育仁</h1>
+        <div class="title">全端工程師 | 軟體開發者</div>
+        <p>熱愛技術創新。專注於打造高品質、使用者友善的應用程式，致力於用科技解決實際問題。</p>
+        <div class="social-links">
+            <a href=https://mail.google.com/mail/u/1/#inbox?compose=GTvVlcSKjgGjbwnnMLXfDksLVTpdLjKLnlSZvzDrpcbqmgdlpkpCVBgvbfPrCKvbzmfVnKXVnTljt target="_blank">📧 Email</a>
+            <a href=https://github.com/cccnlab/CDT-API-Network/blob/main/README.md target="_blank">🐙 GitHub</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="about">
+            <h2>關於我</h2>
+            <p>我是莊育仁，目前就讀於高雄醫學大學 醫務管理學暨醫療資訊學系碩士班（AI 組），預計於今年 7 月畢業。
+
+本科系主要在於資訊類的課程，像是機器學習，深度學習開發，碩士期間主動投入前後端系統建置，並透過高度自律與專案導向的學習方式，獨立完成一套 AI 全端應用系統的開發。我的碩士論文主題為**「自動化認知障礙評估系統」**，整合前端互動設計、後端模型推論與資料儲存，實現從開發到驗證的完整流程。會想要把自動化認知障礙評估系統作為論文主題，是因為台灣年齡架構日益老化，認知障礙變成嚴重的問題，如果可以讓我的系統更完善，就可以減少醫療耗能，讓醫療環境更好。</p>
+            <p style="margin-top: 1rem;">碩士期間第一個遇到的問題就是coding能力，但現在生成式AI可以很好的幫助我學習如何更有效率的學習新的知識，碩士課程主要是專注在AI模型的原理，所以coding屬於自學的能力。包括前端後端以及API串接。</p>
+        </section>
+
+        <section id="skills">
+            <h2>專業技能</h2>
+            <div class="skills-grid">
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">React</div>
+                <div class="skill-item">Node.js</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">HTML/CSS</div>
+                <div class="skill-item">SQL</div>
+                <div class="skill-item">Git</div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>工作經歷</h2>
+            
+            <div class="experience-item">
+                <h3>尚無工作經歷</h3>
+                <div class="experience-meta"></div>
+                <div class="experience-date"></div>
+                <ul>
+                </ul>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>學歷</h2>
+            
+            <div class="education-item">
+                <h3>醫務管理暨醫療資訊學系 碩士</h3>
+                <div class="experience-meta">高雄醫學大學</div>
+                <div class="experience-date">2023年9月 - 2025年8月</div>
+                <p>主要著重於AI演算法原理課程，coding部分依靠自學。</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>聯絡方式</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <strong>Email</strong><br>
+                        chuang0279@gmial.com
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>
+                        <strong>電話</strong><br>
+                        0972890279
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <strong>地點</strong><br>
+                        台灣 高雄市
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 莊育仁的個人簡歷。保留所有權利。</p>
+    </footer>
+</body>
+</html>
