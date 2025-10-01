@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的個人簡歷</title>
+    <title>莊育仁的個人簡歷</title>
     <style>
         * {
             margin: 0;
@@ -106,6 +106,7 @@
             gap: 1rem;
             justify-content: center;
             animation: fadeInUp 1s ease 0.8s backwards;
+            flex-wrap: wrap;
         }
 
         .social-links a {
@@ -165,19 +166,19 @@
             transform: translateY(-5px);
         }
 
-        .experience-item, .education-item {
+        .experience-item, .education-item, .project-item {
             margin-bottom: 2rem;
             padding-bottom: 2rem;
             border-bottom: 1px solid #e0e0e0;
         }
 
-        .experience-item:last-child, .education-item:last-child {
+        .experience-item:last-child, .education-item:last-child, .project-item:last-child {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0;
         }
 
-        .experience-item h3, .education-item h3 {
+        .experience-item h3, .education-item h3, .project-item h3 {
             color: #2d3748;
             font-size: 1.4rem;
             margin-bottom: 0.5rem;
@@ -195,12 +196,12 @@
             margin-bottom: 1rem;
         }
 
-        .experience-item ul {
+        .experience-item ul, .project-item ul {
             margin-left: 1.5rem;
             color: #555;
         }
 
-        .experience-item li {
+        .experience-item li, .project-item li {
             margin-bottom: 0.5rem;
         }
 
@@ -223,11 +224,24 @@
             font-size: 2rem;
         }
 
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            margin-top: 1rem;
+        }
+
         footer {
             background: #2d3748;
             color: white;
             text-align: center;
             padding: 2rem;
+        }
+
+        .visitor-count {
+            margin-top: 1rem;
+            opacity: 0.8;
         }
 
         @keyframes fadeInUp {
@@ -275,11 +289,11 @@
 <body>
     <header>
         <nav>
-            <div class="logo">我的簡歷</div>
+            <div class="logo">莊育仁的簡歷</div>
             <ul>
                 <li><a href="#about">關於我</a></li>
                 <li><a href="#skills">技能</a></li>
-                <li><a href="#experience">經歷</a></li>
+                <li><a href="#projects">專案</a></li>
                 <li><a href="#education">學歷</a></li>
                 <li><a href="#contact">聯絡</a></li>
             </ul>
@@ -289,44 +303,66 @@
     <div class="hero">
         <div class="profile-img">👤</div>
         <h1>莊育仁</h1>
-        <div class="title">全端工程師 | 軟體開發者</div>
-        <p>熱愛技術創新。專注於打造高品質、使用者友善的應用程式，致力於用科技解決實際問題。</p>
+        <div class="title">AI 全端開發者 | 醫療資訊碩士生</div>
+        <p>專注於 AI 應用系統開發，致力於透過科技改善醫療環境，解決認知障礙評估的實際問題。</p>
         <div class="social-links">
-            <a href=https://mail.google.com/mail/u/1/#inbox?compose=GTvVlcSKjgGjbwnnMLXfDksLVTpdLjKLnlSZvzDrpcbqmgdlpkpCVBgvbfPrCKvbzmfVnKXVnTljt target="_blank">📧 Email</a>
-            <a href=https://github.com/cccnlab/CDT-API-Network/blob/main/README.md target="_blank">🐙 GitHub</a>
+            <a href="mailto:chuang0279@gmail.com" target="_blank">📧 Email</a>
+            <a href="https://github.com/chuang022" target="_blank">🐙 GitHub</a>
         </div>
     </div>
 
     <div class="container">
         <section id="about">
             <h2>關於我</h2>
-            <p>我是莊育仁，目前就讀於高雄醫學大學 醫務管理學暨醫療資訊學系碩士班（AI 組），預計於今年 7 月畢業。
+            <p>我是莊育仁，目前就讀於<strong>高雄醫學大學醫務管理學暨醫療資訊學系碩士班（AI 組）</strong>，預計於 2025 年 7 月畢業。</p>
+            
+            <div class="highlight-box">
+                <p>💡 <strong>碩士論文主題：自動化認知障礙評估系統</strong></p>
+                <p style="margin-top: 0.5rem;">整合前端互動設計、後端模型推論與資料儲存，實現從開發到驗證的完整流程。面對台灣人口高齡化帶來的認知障礙問題，我希望透過這套系統減少醫療資源耗能，改善醫療環境。</p>
+            </div>
 
-本科系主要在於資訊類的課程，像是機器學習，深度學習開發，碩士期間主動投入前後端系統建置，並透過高度自律與專案導向的學習方式，獨立完成一套 AI 全端應用系統的開發。我的碩士論文主題為**「自動化認知障礙評估系統」**，整合前端互動設計、後端模型推論與資料儲存，實現從開發到驗證的完整流程。會想要把自動化認知障礙評估系統作為論文主題，是因為台灣年齡架構日益老化，認知障礙變成嚴重的問題，如果可以讓我的系統更完善，就可以減少醫療耗能，讓醫療環境更好。</p>
-            <p style="margin-top: 1rem;">碩士期間第一個遇到的問題就是coding能力，但現在生成式AI可以很好的幫助我學習如何更有效率的學習新的知識，碩士課程主要是專注在AI模型的原理，所以coding屬於自學的能力。包括前端後端以及API串接。</p>
+            <p style="margin-top: 1.5rem;">碩士期間透過<strong>高度自律與專案導向的學習方式</strong>，獨立完成一套 AI 全端應用系統的開發。課程主要著重於 AI 演算法原理，而前後端開發、API 串接等技能則是透過自學並結合生成式 AI 工具（如 ChatGPT、Claude）來加速學習與實作。</p>
         </section>
 
         <section id="skills">
             <h2>專業技能</h2>
             <div class="skills-grid">
+                <div class="skill-item">Python</div>
                 <div class="skill-item">JavaScript</div>
                 <div class="skill-item">React</div>
                 <div class="skill-item">Node.js</div>
-                <div class="skill-item">Python</div>
                 <div class="skill-item">HTML/CSS</div>
                 <div class="skill-item">SQL</div>
                 <div class="skill-item">Git</div>
+                <div class="skill-item">機器學習</div>
+                <div class="skill-item">深度學習</div>
+                <div class="skill-item">API 開發</div>
             </div>
         </section>
 
-        <section id="experience">
-            <h2>工作經歷</h2>
+        <section id="projects">
+            <h2>專案作品</h2>
             
-            <div class="experience-item">
-                <h3>尚無工作經歷</h3>
-                <div class="experience-meta"></div>
-                <div class="experience-date"></div>
+            <div class="project-item">
+                <h3>🏥 自動化認知障礙評估系統</h3>
+                <div class="experience-meta">碩士論文專案</div>
+                <div class="experience-date">2023年 - 2025年</div>
                 <ul>
+                    <li><strong>前端開發</strong>：使用 React 建立互動式評估介面，優化使用者體驗</li>
+                    <li><strong>後端架構</strong>：使用 Node.js 建立 RESTful API，處理資料傳輸與儲存</li>
+                    <li><strong>AI 模型整合</strong>：整合深度學習模型進行認知評估分析</li>
+                    <li><strong>資料庫設計</strong>：使用 SQL 資料庫管理評估數據與使用者資訊</li>
+                    <li><strong>完整開發流程</strong>：從需求分析、系統設計、開發、測試到驗證的完整實踐</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <h3>📊 其他 AI 專案</h3>
+                <div class="experience-meta">課程與自主學習</div>
+                <ul>
+                    <li>機器學習模型開發與訓練</li>
+                    <li>深度學習演算法實作</li>
+                    <li>資料分析與視覺化</li>
                 </ul>
             </div>
         </section>
@@ -335,10 +371,12 @@
             <h2>學歷</h2>
             
             <div class="education-item">
-                <h3>醫務管理暨醫療資訊學系 碩士</h3>
+                <h3>醫務管理暨醫療資訊學系 碩士（AI 組）</h3>
                 <div class="experience-meta">高雄醫學大學</div>
-                <div class="experience-date">2023年9月 - 2025年8月</div>
-                <p>主要著重於AI演算法原理課程，coding部分依靠自學。</p>
+                <div class="experience-date">2023年9月 - 2025年7月（預計）</div>
+                <p><strong>主修課程</strong>：機器學習、深度學習、醫療資訊系統、資料分析</p>
+                <p style="margin-top: 0.5rem;"><strong>論文主題</strong>：自動化認知障礙評估系統</p>
+                <p style="margin-top: 0.5rem;"><strong>技能培養</strong>：AI 演算法原理、全端開發（自學）、專案管理</p>
             </div>
         </section>
 
@@ -349,14 +387,14 @@
                     <div class="contact-icon">📧</div>
                     <div>
                         <strong>Email</strong><br>
-                        chuang0279@gmial.com
+                        chuang0279@gmail.com
                     </div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">📱</div>
                     <div>
                         <strong>電話</strong><br>
-                        0972890279
+                        0972-890-279
                     </div>
                 </div>
                 <div class="contact-item">
@@ -366,6 +404,12 @@
                         台灣 高雄市
                     </div>
                 </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🐙</div>
+                    <div>
+                        <strong>GitHub</strong><br>
+                        <a href="https://github.com/chuang022" target="_blank" style="color: #667eea;">github.com/chuang022</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -373,6 +417,9 @@
 
     <footer>
         <p>&copy; 2025 莊育仁的個人簡歷。保留所有權利。</p>
+        <div class="visitor-count">
+            <img src="https://hits.sh/chuang022.github.io.svg?style=flat&label=訪客人數&color=667eea&labelColor=2d3748" alt="訪客統計">
+        </div>
     </footer>
 </body>
 </html>
