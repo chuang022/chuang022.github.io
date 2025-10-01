@@ -46,6 +46,7 @@
             list-style: none;
             display: flex;
             gap: 2rem;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -136,6 +137,7 @@
             padding: 3rem;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            scroll-margin-top: 80px;
         }
 
         h2 {
@@ -271,9 +273,19 @@
                 font-size: 2rem;
             }
 
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
             nav ul {
                 gap: 1rem;
                 font-size: 0.9rem;
+                justify-content: center;
+            }
+
+            .logo {
+                text-align: center;
             }
 
             section {
