@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人履歷</title>
+    <title>莊育仁的個人簡歷</title>
     <style>
         * {
             margin: 0;
@@ -73,11 +73,7 @@
             border-radius: 50%;
             border: 5px solid white;
             margin: 0 auto 1.5rem;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
+            object-fit: cover;
             animation: fadeInScale 1s ease;
         }
 
@@ -229,9 +225,13 @@
         .highlight-box {
             background: #f8f9fa;
             padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-            margin-top: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+            margin: 1.5rem 0;
+        }
+        
+        .highlight-box strong {
+            color: #2d3748;
         }
 
         footer {
@@ -301,7 +301,7 @@
 <body>
     <header>
         <nav>
-            <div class="logo">莊育仁的履歷</div>
+            <div class="logo">莊育仁的簡歷</div>
             <ul>
                 <li><a href="#about">關於我</a></li>
                 <li><a href="#skills">技能</a></li>
@@ -313,9 +313,9 @@
     </header>
 
     <div class="hero">
-        <div class="profile-img">👤</div>
+        <img src="profile.jpg" alt="莊育仁的照片" class="profile-img">
         <h1>莊育仁</h1>
-        <div class="title">AI 全端開發者 | 醫療資訊碩士</div>
+        <div class="title">AI 全端開發者 | 醫療資訊碩士生</div>
         <p>專注於 AI 應用系統開發，致力於透過科技改善醫療環境，解決認知障礙評估的實際問題。</p>
         <div class="social-links">
             <a href="mailto:chuang0279@gmail.com" target="_blank">📧 Email</a>
@@ -326,11 +326,12 @@
     <div class="container">
         <section id="about">
             <h2>關於我</h2>
-            <p>我是莊育仁，就讀於<strong>高雄醫學大學醫務管理學暨醫療資訊學系碩士班（AI 組）</strong>，於 2025 年 8 月畢業。</p>
+            <p>我是莊育仁，目前就讀於<strong>高雄醫學大學醫務管理學暨醫療資訊學系碩士班（AI 組）</strong>，預計於 2025 年 7 月畢業。</p>
+            
+            <p style="margin-top: 1.5rem;"><strong>碩士論文主題：自動化認知障礙評估系統</strong></p>
             
             <div class="highlight-box">
-                <p> <strong>碩士論文主題：自動化認知障礙評估系統</strong></p>
-                <p style="margin-top: 0.5rem;">整合前端互動設計、後端模型推論與資料儲存，實現從開發到驗證的完整流程。面對台灣人口高齡化帶來的認知障礙問題，我希望透過這套系統減少醫療資源耗能，改善醫療環境。</p>
+                <p>整合前端互動設計、後端模型推論與資料儲存，實現從開發到驗證的完整流程。面對台灣人口高齡化帶來的認知障礙問題，我希望透過這套系統減少醫療資源耗能，改善醫療環境。</p>
             </div>
 
             <p style="margin-top: 1.5rem;">碩士期間透過<strong>高度自律與專案導向的學習方式</strong>，獨立完成一套 AI 全端應用系統的開發。課程主要著重於 AI 演算法原理，而前後端開發、API 串接等技能則是透過自學並結合生成式 AI 工具（如 ChatGPT、Claude）來加速學習與實作。</p>
@@ -385,8 +386,8 @@
             <div class="education-item">
                 <h3>醫務管理暨醫療資訊學系 碩士（AI 組）</h3>
                 <div class="experience-meta">高雄醫學大學</div>
-                <div class="experience-date">2023年9月 - 2025年8月</div>
-                <p><strong>主修課程</strong>：機器學習、深度學習、資料分析</p>
+                <div class="experience-date">2023年9月 - 2025年7月</div>
+                <p><strong>主修課程</strong>：機器學習、深度學習、醫療資訊系統、資料分析</p>
                 <p style="margin-top: 0.5rem;"><strong>論文主題</strong>：自動化認知障礙評估系統</p>
                 <p style="margin-top: 0.5rem;"><strong>技能培養</strong>：AI 演算法原理、全端開發（自學）、專案管理</p>
             </div>
@@ -428,7 +429,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 莊育仁的個人履歷。保留所有權利。</p>
+        <p>&copy; 2025 莊育仁的個人簡歷。保留所有權利。</p>
         <div class="visitor-count">
             <img src="https://hits.sh/chuang022.github.io.svg?style=flat&label=訪客人數&color=667eea&labelColor=2d3748" alt="訪客統計">
         </div>
